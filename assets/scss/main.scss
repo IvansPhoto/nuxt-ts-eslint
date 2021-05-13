@@ -1,0 +1,20 @@
+@import "root";
+@import "fonts";
+@import "transitions";
+@import "headers";
+
+html {
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--colorBackground);
+}
+
+@media (max-width: 1000px) {
+
+}
