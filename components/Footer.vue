@@ -34,51 +34,27 @@ export default {
 </script>
 
 <style lang="scss">
+@import "assets/scss/scss-variables";
+
 	footer {
-		width: 100%;
-		min-height: 5rem;
+		min-height: $footer-min-height;
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
-		padding: 0 1rem;
+		justify-content: center;
 		border-top: 0.1rem solid var(--colorFont);
-		color: var(--colorFont);
-		background-color: var(--colorBackground);
-
-		.address,
-		.phones,
-		.terms {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			margin: 1rem 0;
-
-			p,
-			a {
-				font-size: 1.25rem;
-				text-align: center;
-				font-weight: 500;
-				padding: 0;
-			}
-		}
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: #{$media-screen-mobile}) {
 		footer {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			padding: 1rem;
-			.address,
-			.phones,
-			.terms {
 				p,
 				a {
 					padding: 0.5em;
 					font-size: 1rem;
 				}
-			}
 		}
 	}
 </style>

@@ -61,6 +61,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "assets/scss/scss-variables";
+
 	.showingMenu-enter-active,
 	.showingMenu-leave-active {
 		transition: opacity 1.5s;
@@ -90,11 +92,11 @@ export default {
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: flex-end;
-		padding: 0.75rem 10vw;
 		font-size: 1.25rem;
 		border-bottom: 0.1rem solid var(--colorFont);
 		z-index: 10;
 		color: var(--colorFont);
+		min-height: #{$footer-min-height};
 
 		:first-child {
 			margin-right: auto;
@@ -160,7 +162,7 @@ export default {
 		z-index: 100;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: #{$media-screen-mobile}) {
 		#NavDesktop {
 			display: none;
 		}

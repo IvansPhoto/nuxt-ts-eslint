@@ -1,32 +1,23 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-	padding: 0;
-	margin: 0;
-}
+@import "scss-variables";
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-	font-family: Consolas, monospace;
+h1, h2, h3, h5, p, a {
+	font-family: FiraCode, monospace;
 }
 
 h1 {
 	font-size: 3.5rem;
-	margin: 5rem 0 3rem 0;
+	margin: 0 0 3rem 0;
+	padding: 0;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 900;
 	color: var(--colorFont);
 }
 
 h2 {
 	font-size: 2.05rem;
-	font-weight: 500;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
 	text-transform: uppercase;
 	color: var(--colorFont);
 }
@@ -34,7 +25,8 @@ h2 {
 h3 {
 	font-size: 2.05rem;
 	font-weight: 500;
-	// text-transform: uppercase;
+	margin: 0;
+	padding: 0;
 	color: var(--colorFont);
 }
 
@@ -45,32 +37,29 @@ h4 {
 	padding: 0;
 	color: var(--colorFont);
 }
+
 h5 {
 	font-size: 1rem;
 	margin: 0;
 	padding: 0;
-	color: var(--colorCyanC);
+	color: var(--colorRed);
 	font-weight: lighter;
 }
 
 p {
 	font-size: 1.5rem;
+	font-weight: 300;
 	text-align: justify;
-	margin: 0;
+	margin: 0 0 0.5em 0;
 	padding: 0;
 	color: var(--colorFont);
 }
 
-h1,
-h2,
-h3, {
-	span {
-		font-size: 0.5em;
-		vertical-align: super;
-		padding: 0;
-		margin: 0;
-		line-height: 0;
-	}
+li {
+	font-size: 1.5rem;
+	color: var(--colorFont);
+	font-weight: 300;
+	margin: 0.5em 0;
 }
 
 a {
@@ -82,7 +71,7 @@ a {
 	margin-bottom: 1rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: #{$media-screen-mobile}) {
 	h1 {
 		font-size: 2.25rem;
 		margin: 3rem 0 1rem 0;

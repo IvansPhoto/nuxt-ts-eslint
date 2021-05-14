@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main Id="Main">
     <h1>My Site</h1>
     <h2>Web site</h2>
   </main>
@@ -25,4 +25,4 @@ export default class Blog extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss"></style>

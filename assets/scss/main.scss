@@ -2,8 +2,11 @@
 @import "fonts";
 @import "transitions";
 @import "headers";
+@import "index";
+@import "scss-variables";
 
 html {
+	font-family: FiraCode, monospace;
 	scroll-behavior: smooth;
 	margin: 0;
 	padding: 0;
@@ -15,6 +18,10 @@ body {
 	background-color: var(--colorBackground);
 }
 
-@media (max-width: 1000px) {
+main {
+	min-height: calc(100vh - #{$footer-min-height * 2});
+}
+
+@media (max-width: #{$media-screen-mobile}) {
 
 }
