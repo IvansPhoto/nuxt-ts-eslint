@@ -13,53 +13,33 @@
           <nuxt-link exact-active-class="activeLink" :to="localePath('/')">
             {{ $t('Nav.About') }}
           </nuxt-link>
+          <nuxt-link exact-active-class="activeLink" :to="localePath('/')">
+            {{ $t('Nav.About') }}
+          </nuxt-link>
           <LangSwitcher />
         </div>
       </div>
     </transition>
+
     <button
       :class="{ changeState: showNavMobile }"
       class="button"
       aria-label="Menu button"
       @click="showNavMobile = !showNavMobile"
     />
-    <button :key="isDarkTheme" class="changeColor" aria-label="Change color scheme button" @click="darkTheme">
-      <span class="changeColorText">{{ isDarkTheme ? 'Light' : 'Dark' }}</span>
-    </button>
   </nav>
 </template>
 
 <script>
+import { Component, Vue } from 'nuxt-property-decorator'
 import LangSwitcher from '~/components/LangSwitcher.vue'
 
-export default {
-	name: 'Nav',
-	components: {
-		LangSwitcher
-	},
-	data () {
-		return {
-			showNavMobile: false,
-			isDarkTheme: true
-		}
-	},
-	methods: {
-		darkTheme () {
-			const bodyStyle = document.body.style
-			if (this.isDarkTheme) {
-				bodyStyle.setProperty('--colorFont', 'rgb(41, 41, 41)')
-				bodyStyle.setProperty('--colorBackground', 'rgb(250, 250, 250)')
-				bodyStyle.setProperty('--navGradient', 'linear-gradient(rgba(250, 250, 250, 1), rgba(250, 250, 250, 0))')
-			} else {
-				bodyStyle.setProperty('--colorFont', 'rgb(250, 250, 250)')
-				bodyStyle.setProperty('--colorBackground', 'rgb(41, 41, 41)')
-				bodyStyle.setProperty('--navGradient', 'linear-gradient(rgba(41, 41, 41, 1), rgba(41, 41, 41, 0))')
-			}
-			this.isDarkTheme = !this.isDarkTheme
-		}
-	}
+@Component(LangSwitcher)
+export default class Nav extends Vue {
+	showNavMobile = false;
 }
 </script>
+
 <style lang="scss">
 @import "assets/scss/scss-variables";
 
@@ -89,23 +69,15 @@ export default {
 
 	#NavDesktop {
 		display: flex;
-		flex-wrap: wrap;
+		align-content: center;
+		justify-content: space-evenly;
 		align-items: center;
-		justify-content: flex-end;
-		font-size: 1.25rem;
-		border-bottom: 0.1rem solid var(--colorFont);
-		z-index: 10;
-		color: var(--colorFont);
+		border-bottom: 0.1rem solid var(--colorRed);
 		min-height: #{$footer-min-height};
 
 		:first-child {
 			margin-right: auto;
 			padding: 0;
-		}
-
-		> * {
-			padding: 0 1em;
-			cursor: pointer;
 		}
 	}
 
