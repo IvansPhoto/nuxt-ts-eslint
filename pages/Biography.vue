@@ -211,9 +211,9 @@
         <h2>{{ job.Company }}</h2>
         <p>{{ job.Start }}</p>
         <h3>@GetDate(job.Start) - @GetDate(job.End)</h3>
-        <p><strong>Location:</strong> @job.Location </p>
-        <p><strong>Position:</strong> @job.Position</p>
-        <p><strong>Description:</strong> @job.ShortDescription</p>
+        <p><strong>Location:</strong>{{ job.Location }}</p>
+        <p><strong>Position:</strong>{{ job.Position }}</p>
+        <p><strong>Description:</strong>{{ job.ShortDescription }}</p>
         <Responsibilities resp="@job.Responsibilities" />
       </div>
     </article>
@@ -221,7 +221,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
 import IJob from '~/Interfaces/IJob'
 
@@ -233,7 +233,7 @@ export default class Biography extends Vue {
 		return { jobs }
 	}
 
-	@Prop() jobs: IJob[] = [];
+	jobs: IJob[] = [];
 }
 </script>
 

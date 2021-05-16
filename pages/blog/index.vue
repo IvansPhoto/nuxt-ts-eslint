@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator'
 import { Context } from '@nuxt/types'
 import IBlogPost from '~/Interfaces/IBlogPost'
 
@@ -18,7 +18,7 @@ export default class Blog extends Vue {
 		return { news }
 	}
 
-		@Prop() news: IBlogPost[] = [];
+		news: IBlogPost[] = [];
 }
 </script>
 

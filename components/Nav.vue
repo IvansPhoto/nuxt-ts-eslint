@@ -4,17 +4,32 @@
       <nuxt-link exact-active-class="activeLink" :to="localePath('/')">
         {{ $t('Nav.About') }}
       </nuxt-link>
+      <nuxt-link exact-active-class="activeLink" :to="localePath('/Biography')">
+        {{ $t('Nav.Biography') }}
+      </nuxt-link>
+      <nuxt-link exact-active-class="activeLink" :to="localePath('/DevSkills')">
+        {{ $t('Nav.DevSkills') }}
+      </nuxt-link>
+      <nuxt-link exact-active-class="activeLink" :to="localePath('/Contacts')">
+        {{ $t('Nav.Contacts') }}
+      </nuxt-link>
       <LangSwitcher />
     </div>
 
     <transition name="showingMenu">
       <div v-if="showNavMobile" id="NavMobile">
-        <div class="showingMenuItems" @click="showNavMobile = !showNavMobile">
+        <div class="showingMenuItems" @click="HideMenu">
           <nuxt-link exact-active-class="activeLink" :to="localePath('/')">
             {{ $t('Nav.About') }}
           </nuxt-link>
-          <nuxt-link exact-active-class="activeLink" :to="localePath('/')">
-            {{ $t('Nav.About') }}
+          <nuxt-link exact-active-class="activeLink" :to="localePath('/Biography')">
+            {{ $t('Nav.Biography') }}
+          </nuxt-link>
+          <nuxt-link exact-active-class="activeLink" :to="localePath('/DevSkills')">
+            {{ $t('Nav.DevSkills') }}
+          </nuxt-link>
+          <nuxt-link exact-active-class="activeLink" :to="localePath('/Contacts')">
+            {{ $t('Nav.Contacts') }}
           </nuxt-link>
           <LangSwitcher />
         </div>
@@ -37,6 +52,10 @@ import LangSwitcher from '~/components/LangSwitcher.vue'
 @Component(LangSwitcher)
 export default class Nav extends Vue {
 	showNavMobile = false;
+
+	HideMenu () {
+		this.showNavMobile = !this.showNavMobile
+	}
 }
 </script>
 

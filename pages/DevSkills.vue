@@ -112,7 +112,20 @@
 
 <script>
 export default {
-	name: 'DevSkills'
+	name: 'DevSkills',
+
+	head () {
+		return {
+			title: this.$t('DevSkills.Title'),
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: this.$t('DevSkills.Description')
+				}
+			]
+		}
+	}
 }
 </script>
 

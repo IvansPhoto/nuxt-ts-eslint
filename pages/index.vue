@@ -10,18 +10,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 	@Component
 export default class Blog extends Vue {
-	head () {
-		return {
-			title: this.$t('News.Meta.Title'),
-			meta: [
-				{
-					hid: 'description',
-					name: 'description',
-					content: this.$t('News.Meta.Description')
-				}
-			]
-		}
-	}
+
 }
 </script>
 

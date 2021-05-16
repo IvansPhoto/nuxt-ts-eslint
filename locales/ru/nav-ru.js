@@ -1,5 +1,8 @@
 export default {
 	Nav: {
-		About: 'О мне'
+		About: 'Обо мне',
+		Biography: 'Биография',
+		DevSkills: 'Навыки программирования',
+		Contacts: 'Контакты'
 	}
 }

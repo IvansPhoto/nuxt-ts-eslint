@@ -53,7 +53,7 @@ export default {
 		}
 	},
 	i18n: {
-		baseUrl: 'https://www.nanofibers.tech',
+		baseUrl: 'https://www.ivanpavlov.dev',
 		strategy: 'prefix_and_default',
 		seo: true,
 		lazy: true,
