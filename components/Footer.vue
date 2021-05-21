@@ -6,7 +6,7 @@
     </div>
 
     <div class="phones">
-      <p>+7 9**</p>
+      <p>+7 9** ***-**-**</p>
     </div>
 
     <div class="terms">

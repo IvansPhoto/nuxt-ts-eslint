@@ -5,13 +5,6 @@
   </main>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-
-	@Component
-export default class Blog extends Vue {
-
-}
-</script>
+<script lang="ts"></script>
 
 <style lang="scss"></style>

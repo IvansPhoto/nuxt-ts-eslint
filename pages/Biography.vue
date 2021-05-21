@@ -214,27 +214,41 @@
         <p><strong>Location:</strong>{{ job.Location }}</p>
         <p><strong>Position:</strong>{{ job.Position }}</p>
         <p><strong>Description:</strong>{{ job.ShortDescription }}</p>
-        <Responsibilities resp="@job.Responsibilities" />
       </div>
     </article>
   </main>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import Vue from 'vue'
 import { Context } from '@nuxt/types'
 import IJob from '~/Interfaces/IJob'
 
-@Component
-export default class Biography extends Vue {
+export default Vue.extend({
 	async asyncData (ctx: Context): Promise<Object> {
 		const { $content, app } = ctx
 		const jobs: any = await $content(app.i18n.locale).sortBy('slug', 'desc').fetch()
 		return { jobs }
+	},
+	data () {
+		return {
+			jobs: {} as IJob[]
+		}
+	},
+	head () {
+		return {
+			title: this.$t('DevSkills.Title'),
+			meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: this.$t('DevSkills.Description')
+				}
+			]
+		}
 	}
 
-	jobs: IJob[] = [];
-}
+})
 </script>
 
 <style scoped>
