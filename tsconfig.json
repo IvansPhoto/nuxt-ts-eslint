@@ -26,8 +26,9 @@
     "types": [
       "@nuxt/types",
       "@nuxt/content",
-      "@types/node"
-    ]
+      "@types/node",
+			"nuxt-i18n"
+		]
   },
   "exclude": [
     "node_modules",
